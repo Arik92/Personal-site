@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { ContentService, projectItem } from '../content.service';
 
 declare var particlesJS: any;
@@ -6,6 +6,7 @@ declare var particlesJS: any;
     selector: 'app-projects',
     templateUrl: './projects.component.html',
     styleUrls: ['./projects.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ProjectsComponent implements OnInit {

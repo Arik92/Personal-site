@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { TranslatorService } from '../translator.service';
 import { ContentService, navItem } from '../content.service';
 
@@ -6,6 +6,7 @@ import { ContentService, navItem } from '../content.service';
     selector: 'app-gaia-navbar',
     templateUrl: './gaia-navbar.component.html',
     styleUrls: ['./gaia-navbar.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class GaiaNavbarComponent implements OnInit, OnDestroy {

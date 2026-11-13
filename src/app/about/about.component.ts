@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { TranslatorService } from '../translator.service';
 import { Subscription } from 'rxjs';
 
@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs';
     selector: 'app-about',
     templateUrl: './about.component.html',
     styleUrls: ['./about.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class AboutComponent implements OnInit, OnDestroy {
