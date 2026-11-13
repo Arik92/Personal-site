@@ -1,4 +1,5 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, PLATFORM_ID, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { ContentService, projectItem } from '../content.service';
 
 declare var particlesJS: any;
@@ -16,6 +17,8 @@ export class ProjectsComponent implements OnInit {
   paginationConst: number;
   projectList: projectItem[] = [];
   projectDisplay: projectItem[] = []; // to be sliced off source list and idsplayed, arring a simpler solution
+
+  private platformId = inject(PLATFORM_ID);
 
   constructor(private content: ContentService) {
   }
@@ -51,7 +54,8 @@ export class ProjectsComponent implements OnInit {
   }
 
   calcDefs() {
-    const windowHeight = window.innerWidth; // breakpoints at 990 and 770
+    // No window during the build-time prerender: render the desktop layout (3 per page).
+    const windowHeight = isPlatformBrowser(this.platformId) ? window.innerWidth : this.wideThreshold + 1; // breakpoints at 990 and 770
     if (windowHeight <= this.midThreshold) {
       this.paginationConst = 1;
     } else if (windowHeight <= this.wideThreshold) {

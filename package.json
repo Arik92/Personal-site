@@ -10,8 +10,7 @@
     "i18n:generate": "i18n src/assets/i18n/i18n.pipe src/assets/i18n"
   },
   "engines": {
-    "node": "10.14.1",
-    "npm": "6.4.1"
+    "node": "^22.22.3 || >=24.15.0"
   },
   "private": true,
   "dependencies": {
@@ -22,10 +21,11 @@
     "@angular/forms": "^22.2.6",
     "@angular/platform-browser": "^22.2.6",
     "@angular/platform-browser-dynamic": "^22.2.6",
+    "@angular/platform-server": "^22.2.6",
     "@angular/router": "^22.2.6",
+    "@angular/ssr": "^22.2.7",
     "@fortawesome/fontawesome-free": "^5.15.2",
     "@ngx-translate/core": "^14.0.0",
-    "@ngx-translate/http-loader": "^7.0.0",
     "bootstrap": "^4.5.3",
     "compression": "^1.7.4",
     "express": "^4.17.1",
@@ -45,7 +45,7 @@
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/jquery": "^3.5.5",
-    "@types/node": "^12.12.48",
+    "@types/node": "^22.12.0",
     "istanbul-lib-instrument": "^6.0.3",
     "jasmine-core": "~3.6.0",
     "karma": "~6.4.4",
