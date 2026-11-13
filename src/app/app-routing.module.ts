@@ -7,12 +7,12 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'projects', component: ProjectsComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', redirectTo: '', pathMatch: 'full' }, // old URL: prerendered as a redirect page to /
   { path: 'contact', component: ContactComponent },   
-  { path: '**', redirectTo: '/home', pathMatch: 'full' } // Until a 404 is implemented
+  { path: '**', redirectTo: '', pathMatch: 'full' } // Until a 404 is implemented
 ];
 
 @NgModule({
