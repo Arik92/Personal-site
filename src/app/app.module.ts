@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { RTLDivDirective } from './rtldiv.directive';
 
@@ -20,32 +20,25 @@ export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http);
 }
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    ProjectsComponent,
-    AboutComponent,
-    RTLDivDirective,
-    ContactBtnsComponent,
-    ContactComponent,
-    GaiaNavbarComponent,
-    FooterComponent,
-    HomeComponent,
-    FlipCardComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-      provide: TranslateLoader,
-      useFactory: createTranslateLoader,
-      deps: [HttpClient]
-    }
-  }),
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        ProjectsComponent,
+        AboutComponent,
+        RTLDivDirective,
+        ContactBtnsComponent,
+        ContactComponent,
+        GaiaNavbarComponent,
+        FooterComponent,
+        HomeComponent,
+        FlipCardComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: createTranslateLoader,
+                deps: [HttpClient]
+            }
+        }),
+        AppRoutingModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
