@@ -3,9 +3,10 @@ import { TranslatorService } from '../translator.service';
 import { ContentService, navItem } from '../content.service';
 
 @Component({
-  selector: 'app-gaia-navbar',
-  templateUrl: './gaia-navbar.component.html',
-  styleUrls: ['./gaia-navbar.component.scss']
+    selector: 'app-gaia-navbar',
+    templateUrl: './gaia-navbar.component.html',
+    styleUrls: ['./gaia-navbar.component.scss'],
+    standalone: false
 })
 export class GaiaNavbarComponent implements OnInit, OnDestroy {
   dropdownFlag: boolean = false;
