@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { TranslatorService } from './translator.service';
 
-import * as projectInfo from '../assets/project_info.json';
+import projectInfo from '../assets/project_info.json';
 
 /**
  * Content service :
