@@ -2,19 +2,9 @@
     a {
         color: #FFFFFF;
     }
-    .desc-en {
-        display: block;
-    }
-    .desc-he {
-        display: none;
-    }
-}
-
-.title-area.rtl {
-    .desc-en {
-        display: none;
-    }
-    .desc-he {
-        display: block;
+    // GitHub / LinkedIn links in the "Who am I" intro sit on a white section
+    .description a.profile-link {
+        color: inherit;
+        text-decoration: underline;
     }
 }

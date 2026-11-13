@@ -11,7 +11,6 @@ declare var $: any;
 })
 export class HomeComponent implements OnInit, AfterViewChecked {
   featured_projects: projectItem[];
-  currentAge: number = new Date().getFullYear() - 1992;
 
   constructor(private content: ContentService) { }
 
