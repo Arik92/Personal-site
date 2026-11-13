@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { GaiaNavbarComponent } from './gaia-navbar.component';
 
@@ -6,7 +6,7 @@ describe('GaiaNavbarComponent', () => {
   let component: GaiaNavbarComponent;
   let fixture: ComponentFixture<GaiaNavbarComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ GaiaNavbarComponent ]
     })
