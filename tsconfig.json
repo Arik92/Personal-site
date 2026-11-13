@@ -3,6 +3,7 @@
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
+    "esModuleInterop": true,
     "declaration": false,
     "experimentalDecorators": true,
     "module": "es2020",
@@ -13,7 +14,6 @@
       "node_modules/@types"
     ],
     "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
     "useDefineForClassFields": false,
     "strict": false
   },
