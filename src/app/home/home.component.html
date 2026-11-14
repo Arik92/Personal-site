@@ -1,6 +1,6 @@
 <div class="section section-header">
     <div class="parallax filter filter-color-black">
-        <div class="image"
+        <div class="image" role="img" aria-label="Arik Aviv"
             style="background-image: url('assets/arik-4668-min.jpg')">
         </div>
         <div class="container">
@@ -8,7 +8,7 @@
                 <div class="title-area" rtlDiv>
                     <p>                {{ 'HOME.GREETINGS' | translate }}
                     </p>
-                    <h1 class="title-modern">{{ 'HOME.INTRODUCTION' | translate }}!</h1>
+                    <h1 class="title-modern">{{ 'NAVBAR.PERSONAL_NAME' | translate }}</h1>
                     <h3>{{ 'HOME.INTRODUCTION_CONT' | translate }}</h3>
                     <div class="separator line-separator">♦</div>
                 </div>
@@ -28,8 +28,7 @@
             <div class="title-area" rtlDiv>
                 <h2>{{ 'HOME.WHO' | translate }}</h2>
                 <div class="separator separator-danger">✻</div>
-                <p class="description desc-en">{{currentAge}} {{ 'HOME.ABOUT' | translate }}:</p>
-                <p class="description desc-he">{{ 'HOME.ABOUT' | translate }} {{currentAge}}. {{ 'HOME.ABOUT_HEB_EXT' | translate }}:</p>
+                <p class="description">{{ 'HOME.ABOUT' | translate }} (<a class="profile-link" href="https://github.com/Arik92" target="_blank" rel="noopener">GitHub</a> · <a class="profile-link" href="https://www.linkedin.com/in/arik-aviv/" target="_blank" rel="noopener">LinkedIn</a>). {{ 'HOME.ABOUT_CONT' | translate }}:</p>
             </div>
         </div>
         <div class="row">

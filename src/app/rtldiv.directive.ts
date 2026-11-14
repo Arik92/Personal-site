@@ -1,7 +1,10 @@
 import { Directive, ElementRef } from '@angular/core';
 import { TranslatorService } from './translator.service';
 
-@Directive({selector: '[rtlDiv]'})
+@Directive({
+    selector: '[rtlDiv]',
+    standalone: false
+})
 export class RTLDivDirective {
   isRTL: boolean;
 

@@ -1,11 +1,14 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { TranslatorService } from '../translator.service';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+    selector: 'app-about',
+    templateUrl: './about.component.html',
+    styleUrls: ['./about.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class AboutComponent implements OnInit, OnDestroy {
   age: number = 0;
@@ -16,6 +19,9 @@ export class AboutComponent implements OnInit, OnDestroy {
   currentLanguage: string = '';
   currentLanguageSubscription: Subscription;
   langChangeSubscription: Subscription;
+
+  // Injected DOCUMENT (not the global) so the word count also works during the build-time prerender.
+  private document = inject(DOCUMENT);
 
   constructor(private translate: TranslatorService) { }
 
@@ -45,7 +51,7 @@ export class AboutComponent implements OnInit, OnDestroy {
 
   calcWords(): number {
     const wordPatt = /\S+/g;
-    const contentElemText = document.getElementsByClassName('content')[0].textContent;    
+    const contentElemText = this.document.getElementsByClassName('content')[0].textContent;    
     return contentElemText.match(wordPatt).length;
   }
 

@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { RTLDivDirective } from './rtldiv.directive';
+import { StaticTranslateLoader } from './static-translate.loader';
 
 import { AppComponent } from './app.component';
 import { ProjectsComponent } from './projects/projects.component';
@@ -16,36 +16,24 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { FlipCardComponent } from './flip-card/flip-card.component';
 
-export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http);
-}
-
-@NgModule({
-  declarations: [
-    AppComponent,
-    ProjectsComponent,
-    AboutComponent,
-    RTLDivDirective,
-    ContactBtnsComponent,
-    ContactComponent,
-    GaiaNavbarComponent,
-    FooterComponent,
-    HomeComponent,
-    FlipCardComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-      provide: TranslateLoader,
-      useFactory: createTranslateLoader,
-      deps: [HttpClient]
-    }
-  }),
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        ProjectsComponent,
+        AboutComponent,
+        RTLDivDirective,
+        ContactBtnsComponent,
+        ContactComponent,
+        GaiaNavbarComponent,
+        FooterComponent,
+        HomeComponent,
+        FlipCardComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useClass: StaticTranslateLoader
+            }
+        }),
+        AppRoutingModule], providers: [provideHttpClient(withXhr(), withInterceptorsFromDi())] })
 export class AppModule { }

@@ -33,7 +33,7 @@ HOBBY6 | Reading books - science fiction, self development or just for fun | ק�
 
 =>CONTACT
 HEADER | Contact | צרו קשר
-CONTACT_MESSAGE | We might not know each other yet, but it does'nt have to stay that way! For business inquiries, job and development offers, or if you just liked this site and wanna let me know - feel free to get in touch. Im available through email, linkedIn, github, and Morse code. | אנחנו לא מכירים עדיין, אבל זה לא חייב להישאר ככה! בין אם בשביל הצעות עסקיות, פיתוח, עבודה, או סתם כי אהבת את האתר ובא לך לומר מילה טובה - אני מזמין אותך לרשום לי. הדרכים הכי טובות לזה הן אימייל, לינקדאין, גיטהאב וקוד מורס.
+CONTACT_MESSAGE | We might not know each other yet, but it does'nt have to stay that way! For business inquiries, job and development offers, or if you just liked this site and wanna let me know - feel free to get in touch. I'm available through email, linkedIn, github, and Morse code. | אנחנו לא מכירים עדיין, אבל זה לא חייב להישאר ככה! בין אם בשביל הצעות עסקיות, פיתוח, עבודה, או סתם כי אהבת את האתר ובא לך לומר מילה טובה - אני מזמין אותך לרשום לי. הדרכים הכי טובות לזה הן אימייל, לינקדאין, גיטהאב וקוד מורס.
 FEEL_FREE | Feel free to reach out | ליצירת קשר
 <=
 
@@ -43,17 +43,17 @@ DESCRIPTION | Some of the solo(non-commercial) projects that I have worked on ov
 <=
 
 =>HOME
-GREETINGS | HI | אהלן
-INTRODUCTION | Im Arik | אני אריק
+GREETINGS | HI, I'm | אהלן, אני
+INTRODUCTION | I'm Arik | אני אריק
 INTRODUCTION_CONT | I program stuff. A lot of stuff | ואני מתכנת דברים.
 CHECK | Check It Out | כמו למשל...
 WHO | Who Am I | מי אני
-ABOUT | Years old programmer. What Im About | מפתח תוכנה בן
-ABOUT_HEB_EXT | x | על קצה המזלג
+ABOUT | I'm Arik Aviv, a software developer | אני אריק אביב, מפתח תוכנה
+ABOUT_CONT | Here's what I'm about | על קצה המזלג
 PROG | Developer | מפתח
 ABOUT_PROG | My vision is to create applications that make people's lives better. Even a little | השאיפה שלי היא לבנות אפליקציות שיעזרו לאנשים ויקלו על חייהם. אפילו טיפה.
 SHAPE | Health & Sports Enthusiast | אורח חיים בריא
-ABOUT_SHAPE | Im about Balance of both body and mind. I enjoy running, weight training and Table Tennis | כשאני לא מפתח תוכנה אני מפתח את הגוף שלי - עם ריצה, אימוני משקולות וטניס שולחן
+ABOUT_SHAPE | I'm about Balance of both body and mind. I enjoy running, weight training and Table Tennis | כשאני לא מפתח תוכנה אני מפתח את הגוף שלי - עם ריצה, אימוני משקולות וטניס שולחן
 MUSIC | Guitarist | גיטריסט
 ABOUT_MUSIC | Life isn't solely about the code. When not typing away at the screen I play my 6 stringed Gibson Explorer. | אוהב להביע את עצמי עם מוזיקה. בזמני הפנוי מנגן רוק ומוזיקת שנות ה80 על הגיבסון שלי
 FEATURED_PROJECTS | Featured Projects | פרויקטים נבחרים

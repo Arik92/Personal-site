@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { TranslateService } from '@ngx-translate/core';
+import { Observable, ReplaySubject } from 'rxjs';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,11 @@ export class TranslatorService {
   
   langChange$: Observable<any>;
   constructor(private translate: TranslateService) {
-    this.langChange$ = this.translate.onLangChange;
+    // Replay the latest language change: translations now load synchronously (also during
+    // the prerender), so services created after start-up must still receive the active language.
+    const langChange = new ReplaySubject<LangChangeEvent>(1);
+    this.translate.onLangChange.subscribe(event => langChange.next(event));
+    this.langChange$ = langChange.asObservable();
    }
   
   // translation service example

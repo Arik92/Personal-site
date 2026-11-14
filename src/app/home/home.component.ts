@@ -1,15 +1,16 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, AfterViewChecked, ChangeDetectionStrategy } from '@angular/core';
 import { ContentService, projectItem } from '../content.service';
 declare var $: any;
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
 })
 export class HomeComponent implements OnInit, AfterViewChecked {
   featured_projects: projectItem[];
-  currentAge: number = new Date().getFullYear() - 1992;
 
   constructor(private content: ContentService) { }
 
